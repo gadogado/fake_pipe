@@ -196,6 +196,16 @@ module FakePipe
       Faker::Address.zip_code
     end
 
+    # Faker::Number.number
+    def mutate_large_integer(_)
+      Faker::Number.number(10).to_i
+    end
+
+    # Faker::Number.number
+    def mutate_small_integer(_)
+      Faker::Number.number(2).to_i
+    end
+
     # Reopen class to define aliases on module_function
     class << self
       alias mutate_guid mutate_uuid
