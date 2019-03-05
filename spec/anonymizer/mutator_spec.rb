@@ -213,16 +213,14 @@ module FakePipe
       context '#mutate_large_integer' do
         subject { described_class.mutate('large_integer', 'dont_care') }
         it 'matches proper format' do
-          expect(subject).to be_a(Integer) 
-          expect(subject.to_s).to match(/\d{10}/)
+          expect(described_class.mutate('large_integer', 'dont_care')).to match(/\d{8}/)
         end
       end
 
       context '#mutate_small_integer' do
         subject { described_class.mutate('small_integer', 'dont_care') }
         it 'matches proper format' do
-          expect(subject).to be_a(Integer) 
-          expect(subject.to_s).to match(/\d{2}/)
+          expect(described_class.mutate('small_integer', 'dont_care')).to match(/\d{2}/)
         end
       end      
       

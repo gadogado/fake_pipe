@@ -198,12 +198,12 @@ module FakePipe
 
     # Faker::Number.number
     def mutate_large_integer(_)
-      Faker::Number.number(10).to_i
+      Faker::Number.number(8)
     end
 
     # Faker::Number.number
     def mutate_small_integer(_)
-      Faker::Number.number(2).to_i
+      Faker::Number.number(2)
     end
 
     # Reopen class to define aliases on module_function
